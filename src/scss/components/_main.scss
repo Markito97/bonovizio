@@ -1,0 +1,24 @@
+@import './../variables';
+
+
+.main {
+    
+ }
+
+.main__event {
+    background-color: $bg-main;
+}
+
+.event__content {
+    width: 100%;
+    display: flex;
+}
+
+.conference {
+    padding-left: 160px;
+}
+
+.event__date {
+    display: flex;
+    flex-direction: column;
+}
