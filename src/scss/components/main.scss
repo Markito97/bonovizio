@@ -1,0 +1,193 @@
+.promo {
+  background-color: $bg-main;
+  .row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__preview-wrapper {
+    display: flex;
+    column-gap: 30px;
+    padding-left: 122px;
+    padding-top: 70px;
+
+    .promo-conf__img {
+      min-width: 27px;
+    }
+  }
+
+  &__date-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    max-width: 520px;
+
+    .date__img {
+      max-width: 269px;
+    }
+  }
+
+  &__sponsors-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__auth {
+    max-width: 423px;
+    margin-top: 51px;
+    padding: 25px 13px 25px 13px;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: 0.67em;
+    margin-left: 180px;
+    margin-bottom: 48px;
+  }
+
+  &__chat {
+    padding-top: 32px;
+  }
+
+  &__text-wrapper {
+    max-width: 520px;
+    margin-left: 180px;
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 130%;
+  }
+
+  &__text {
+    padding-top: 41px;
+    font-size: 18px;
+    line-height: 140%;
+  }
+
+  &__info {
+    padding-top: 48px;
+    padding-bottom: 86px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@include laptop {
+  .promo {
+    &__chat {
+      max-width: 300px;
+    }
+  }
+}
+
+@include tablet {
+  .promo {
+    &__preview-wrapper {
+      padding-left: 0;
+      padding-top: 84px;
+      column-gap: 20px;
+    }
+
+    &__date-wrapper {
+      max-width: 350px;
+
+      .years__img {
+        max-width: 350px;
+      }
+    }
+
+    &__sponsors-wrapper {
+      .group__img {
+        max-width: 55px;
+      }
+
+      .mindsghare__img {
+        max-width: 74px;
+      }
+
+      .mediacom__img {
+        max-width: 60px;
+      }
+      .wavemaker__img {
+        max-width: 58px;
+      }
+    }
+
+    &__auth {
+      margin-left: 47px;
+    }
+
+    &__chat {
+      max-width: 250px;
+      padding-top: 53px;
+    }
+
+    &__text-wrapper {
+      max-width: 520px;
+      margin-left: 47px;
+    }
+  }
+}
+
+@include mobile {
+  .promo {
+    .row {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__preview-wrapper {
+      padding-top: 60px;
+    }
+
+    &__date-wrapper {
+      .date__img {
+        max-width: 140px;
+      }
+    }
+
+    &__sponsors-wrapper {
+      .group__img {
+        max-width: 39px;
+      }
+
+      .mindsghare__img {
+        max-width: 53px;
+      }
+
+      .mediacom__img {
+        max-width: 43px;
+      }
+      .wavemaker__img {
+        max-width: 41px;
+      }
+    }
+
+    &__auth {
+      margin-top: 59px;
+      margin-left: 0;
+      width: 100%;
+      letter-spacing: 0.3em;
+      padding: 25px 17px 25px 17px;
+    }
+
+    &__chat {
+      padding-top: 59px;
+    }
+
+    &__text-wrapper {
+      max-width: 400px;
+      padding-top: 48px;
+      max-width: 520px;
+      margin-left: 0;
+      padding-bottom: 130px;
+    }
+
+    &__info {
+      display: none;
+    }
+  }
+}

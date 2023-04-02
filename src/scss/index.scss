@@ -1,7 +1,8 @@
-@import "./components/slider";
-@import "./normalize";
-@import './components//header';
-@import './components//main';
+@import "./common/index.scss";
+@import "./components/header/index.scss";
+@import "./components/slider/slider.scss";
+@import "./components//main";
+@import "./components/company";
 
 html,
 body {
@@ -16,16 +17,36 @@ body {
   min-height: 100%;
 }
 
-[class*="__container1240"] {
+.container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   margin: 0px auto;
   max-width: 1240px;
+  padding-left: 38px;
+  padding-right: 38px;
 }
 
-[class*="__container800"] {
-  display: flex;
-  justify-content: center;
-  max-width: 800px;
+.btn {
+  background-color: $bg-sec;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
+@media (max-width: 768px) {
+  .container {
+    max-width: none;
+    padding-left: 27px;
+    padding-right: 27px;
+  }
+}
+
+@media (max-width: 575px) {
+  .container {
+    max-width: none;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

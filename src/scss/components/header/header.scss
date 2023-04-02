@@ -1,0 +1,147 @@
+.header {
+  &__navigation-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 16px 12px 16px 12px;
+    column-gap: 25px;
+
+    .logo {
+      font-size: 29px;
+      line-height: 35px;
+      color: $cl-sec-main;
+      white-space: nowrap;
+      font-weight: normal;
+    }
+
+    .nav {
+      width: 100%;
+      display: flex;
+
+      .navigation-menu {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__item.auth {
+          border: 1px;
+          border-style: solid;
+          color: $cl-th-main;
+          border-color: $cl-th-main;
+          line-height: 19px;
+          padding: 8px 30px 8px 30px;
+
+          &__link.auth {
+            color: $cl-th-main !important;
+          }
+        }
+
+        &__link {
+          color: $cl-sec-main;
+          cursor: pointer;
+        }
+      }
+
+      .social-media {
+        &__menu {
+          padding-left: 128px;
+          display: flex;
+          align-items: center;
+          column-gap: 20px;
+        }
+      }
+    }
+  }
+}
+
+.open {
+  display: flex !important;
+  position: fixed;
+  background-color: white;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  transform: translateY(-150%);
+  animation: show 1s forwards;
+}
+
+@include tablet {
+  .header {
+    &__navigation-wrapper {
+      padding: 20px 0px 20px 0px;
+      display: flex;
+      justify-content: space-between;
+
+      .logo {
+        z-index: 1000;
+      }
+    }
+
+    &__divider {
+      display: none;
+    }
+
+    .nav {
+      display: none;
+      flex-direction: column;
+
+      .navigation-menu {
+        row-gap: 60px;
+        padding-top: 196px;
+        flex-direction: column;
+
+        &__link {
+          color: $cl-sec-main;
+          cursor: pointer;
+          font-size: 32px;
+          line-height: 38px;
+        }
+      }
+
+      .social-media__menu {
+        padding-left: 0;
+        padding-top: 92px;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .header {
+    &__navigation-wrapper {
+      .nav {
+        .navigation-menu {
+          padding-top: 98px;
+          row-gap: 15px;
+
+          &__link {
+            color: $cl-sec-main;
+            cursor: pointer;
+            font-size: 22px;
+            line-height: 26px;
+          }
+        }
+
+        .social-media__menu {
+          padding-top: 39px;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+@keyframes show {
+  0% {
+    transform: translateY(-150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
