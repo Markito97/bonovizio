@@ -5,22 +5,42 @@ import "swiper/scss";
 import "swiper/scss/navigation";
 import "swiper/scss/pagination";
 
+const EMAIL_PATTERN =
+  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 document.addEventListener("DOMContentLoaded", (e) => {
-  console.log("aboba");
   anime({
     targets: ".promo__text-wrapper",
     opacity: 1,
     easing: "linear",
     duration: 1500,
   });
+
+  anime({
+    targets: ".logo",
+    opacity: [0, 1],
+    duration: 1000,
+    easing: "linear",
+  });
+
+  anime({
+    targets: ".promo__title-wrapper",
+    translateX: "100%",
+    opacity: 1,
+    easing: "easeOutExpo",
+  });
 });
 
 (function start() {
   const menu = document.querySelector(".nav");
   const burgerBtn = document.querySelector(".burger__menu");
-  const messageForm = document.querySelector(".message__form");
-
+  const messageForm = document.forms.message;
   const sliderContainer = document.querySelector(".swiper");
+
+  const name = messageForm.elements.name;
+  const email = messageForm.elements.email;
+  const message__text = messageForm.elements.message__text;
+  const sumbitBtn = document.querySelector(".message__submit");
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -40,33 +60,27 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
   observer.observe(sliderContainer);
 
-  anime({
-    targets: ".logo",
-    opacity: [0, 1],
-    duration: 1000,
-    easing: "linear",
-  });
+  const validate = () => {
+    if (EMAIL_PATTERN.test(email.value)) {
+      email.style.outline = "none";
+    } else {
+      email.style.outline = "2px solid red";
+    }
+  };
 
-  // anime({
-  //   targets: ".promo__title",
-  //   opacity: [0, 1],
-  //   scale: [0.5, 1],
-  //   // rotate: "1turn",
-  //   easing: "easeInQuad",
-  //   duration: 1500,
-  // });
-
-  anime({
-    targets: ".promo__title-wrapper",
-    translateX: "100%",
-    opacity: 1,
-    easing: "easeOutExpo",
-    // duration: 2000,
-    // delay: 1000,
-  });
+  email.addEventListener("input", validate);
 
   const sendForm = (e) => {
     e.preventDefault();
+    console.log();
+    const formElements = [name, email, message__text];
+    formElements.forEach((element) => {
+      if (!element.value) {
+        element.style.outline = "2px solid red";
+      } else {
+        element.style.outline = "none";
+      }
+    });
   };
 
   messageForm.addEventListener("submit", sendForm);
