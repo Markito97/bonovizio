@@ -1,12 +1,7 @@
 .header {
-  &__navigation-wrapper {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 16px 12px 16px 12px;
-    column-gap: 25px;
-
-    .logo {
+  &__logo {
+    z-index: 1001;
+    &__link {
       cursor: pointer;
       font-size: 29px;
       line-height: 35px;
@@ -15,47 +10,50 @@
       font-weight: normal;
       z-index: 1001;
     }
+  }
 
-    .nav {
+  &__navigation-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 16px 12px 16px 12px;
+    column-gap: 25px;
+
+    .menu {
       width: 100%;
       display: flex;
 
-      .navigation-menu {
+      &__list-navigation {
         overflow: hidden;
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-
-        &__item.auth {
-          border: 1px;
-          border-style: solid;
-          color: $cl-th-main;
-          border-color: $cl-th-main;
-          line-height: 19px;
-          padding: 8px 30px 8px 30px;
-
-          &__link.auth {
-            color: $cl-th-main !important;
-          }
-        }
-
-        &__link {
-          color: $cl-sec-main;
-          cursor: pointer;
-        }
       }
 
-      .social-media {
-        &__menu {
-          padding-left: 128px;
-          display: flex;
-          align-items: center;
-          column-gap: 20px;
-        }
+      &__item_auth {
+        border: 1px;
+        border-style: solid;
+        color: $cl-th-main;
+        border-color: $cl-th-main;
+        line-height: 19px;
+        padding: 8px 30px 8px 30px;
+      }
 
-        &__item {
-        }
+      &__link {
+        color: $cl-sec-main;
+        cursor: pointer;
+      }
+
+      &__link_auth {
+        color: $cl-th-main !important;
+      }
+
+      &__list-social {
+        padding-left: 128px;
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
 
         &__link {
           cursor: pointer;
@@ -90,8 +88,8 @@
       display: none;
     }
 
-    .nav {
-      .social-media__menu {
+    .menu {
+      &__list-social {
         padding-left: 10px;
         column-gap: 10px;
       }
@@ -104,30 +102,26 @@
     &__navigation-wrapper {
       display: flex;
       justify-content: space-between;
-
-      .logo {
-        z-index: 1001;
-      }
     }
 
-    .nav {
+    .menu {
       display: none;
       flex-direction: column;
 
-      .navigation-menu {
+      &__list-navigation {
         row-gap: 60px;
         padding-top: 196px;
         flex-direction: column;
-
-        &__link {
-          color: $cl-sec-main;
-          cursor: pointer;
-          font-size: 32px;
-          line-height: 38px;
-        }
       }
 
-      .social-media__menu {
+      &__link {
+        color: $cl-sec-main;
+        cursor: pointer;
+        font-size: 32px;
+        line-height: 38px;
+      }
+
+      &__list-social {
         padding-left: 0;
         padding-top: 92px;
         display: flex;
@@ -140,20 +134,20 @@
 @include mobile {
   .header {
     &__navigation-wrapper {
-      .nav {
-        .navigation-menu {
+      .menu {
+        &__list-navigation {
           padding-top: 98px;
           row-gap: 15px;
-
-          &__link {
-            color: $cl-sec-main;
-            cursor: pointer;
-            font-size: 22px;
-            line-height: 26px;
-          }
         }
 
-        .social-media__menu {
+        &__link {
+          color: $cl-sec-main;
+          cursor: pointer;
+          font-size: 22px;
+          line-height: 26px;
+        }
+
+        &__list-social {
           padding-top: 39px;
           display: flex;
           justify-content: center;

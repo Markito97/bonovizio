@@ -1,9 +1,38 @@
-import { Navigation, Pagination } from "swiper";
 import anime from "animejs/lib/anime.es.js";
-import Swiper from "swiper/bundle";
-import "swiper/scss";
-import "swiper/scss/navigation";
-import "swiper/scss/pagination";
+import { swiper } from "./src/core/slider";
+
+// const motionPath = anime.path(".motion-path .circle");
+
+// anime({
+//   targets: ".motion-path .circle",
+//   translateX: motionPath("x"),
+//   translateY: motionPath("y"),
+//   rotate: motionPath("angle"),
+//   easing: "linear",
+//   duration: 2000,
+//   loop: true,
+// });
+
+anime({
+  targets: ".promo__chat .lines path",
+  strokeDashoffset: [anime.setDashoffset, 0],
+  easing: "easeInOutSine",
+  duration: 1000,
+  delay: function (el, i) {
+    return i * 250;
+  },
+  direction: "alternate",
+  loop: true,
+});
+
+anime({
+  targets: ".circle",
+  translateY: 200,
+  // translateX: 250,
+  direction: "alternate",
+  loop: true,
+  easing: "linear",
+});
 
 const EMAIL_PATTERN =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -32,7 +61,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 });
 
 (function start() {
-  const menu = document.querySelector(".nav");
+  const menu = document.querySelector(".menu");
   const burgerBtn = document.querySelector(".burger__menu");
   const messageForm = document.forms.message;
   const sliderContainer = document.querySelector(".swiper");
@@ -99,34 +128,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
   };
 
   burgerBtn.addEventListener("click", handleMenu);
-
-  const desktopSwiper = new Swiper(".swiper-container", {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    breakpoints: {
-      575: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 30,
-      },
-      1024: {
-        slidesPerView: 2,
-        spaceBetween: 50,
-      },
-    },
-    pagination: {
-      el: ".swiper-custom-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next-unique",
-      prevEl: ".swiper-button-prev-unique",
-    },
-    modules: [Navigation, Pagination],
-  });
 
   window.addEventListener("resize", () => {
     if (window.innerWidth > 768) {

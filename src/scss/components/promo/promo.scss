@@ -13,21 +13,21 @@
     column-gap: 30px;
     padding-left: 122px;
     padding-top: 70px;
-
-    .promo-conf__img {
-      min-width: 27px;
-    }
   }
 
-  &__date-wrapper {
+  &__conf-wrapper {
+    min-width: 27px;
+  }
+
+  &__info-wrapper {
     display: flex;
     flex-direction: column;
     row-gap: 24px;
     max-width: 520px;
+  }
 
-    .date__img {
-      max-width: 269px;
-    }
+  &__date-wrapper {
+    max-width: 269px;
   }
 
   &__sponsors-wrapper {
@@ -48,7 +48,7 @@
     margin-bottom: 48px;
   }
 
-  &__chat {
+  &__chat-wrapper {
     padding-top: 32px;
   }
 
@@ -105,38 +105,38 @@
       column-gap: 20px;
     }
 
-    &__date-wrapper {
+    &__years-wrapper {
       max-width: 350px;
-
-      .years__img {
-        max-width: 350px;
-      }
     }
 
-    &__sponsors-wrapper {
-      .group__img {
-        max-width: 55px;
-      }
+    &__group-wrapper {
+      max-width: 55px;
+    }
 
-      .mindsghare__img {
-        max-width: 74px;
-      }
+    &__mindsghare-wrapper {
+      max-width: 74px;
+    }
 
-      .mediacom__img {
-        max-width: 60px;
-      }
-      .wavemaker__img {
-        max-width: 58px;
-      }
+    &__mediacom-wrapper {
+      max-width: 60px;
+    }
+
+    &__wavemaker-wrapper {
+      max-width: 58px;
     }
 
     &__auth {
+      width: 100%;
       margin-left: 47px;
+    }
+
+    &__chat-wrapper {
+      padding-top: 53px;
     }
 
     &__chat {
       max-width: 250px;
-      padding-top: 53px;
+      max-height: 200px;
     }
 
     &__text-wrapper {
@@ -158,26 +158,23 @@
     }
 
     &__date-wrapper {
-      .date__img {
-        max-width: 140px;
-      }
+      max-width: 140px;
     }
 
-    &__sponsors-wrapper {
-      .group__img {
-        max-width: 39px;
-      }
+    &__group-wrapper {
+      max-width: 39px;
+    }
 
-      .mindsghare__img {
-        max-width: 53px;
-      }
+    &__mindsghare-wrapper {
+      max-width: 53px;
+    }
 
-      .mediacom__img {
-        max-width: 43px;
-      }
-      .wavemaker__img {
-        max-width: 41px;
-      }
+    &__mediacom-wrapper {
+      max-width: 43px;
+    }
+
+    &__wavemaker-wrapper {
+      max-width: 41px;
     }
 
     &__auth {
@@ -189,7 +186,7 @@
       padding: 25px 17px 25px 17px;
     }
 
-    &__chat {
+    &__chat-wrapper {
       padding-top: 59px;
     }
 

@@ -47,7 +47,7 @@
   transform: rotate(45deg) translate(0, 50%);
 }
 
-@media (max-width: 768px) {
+@include tablet {
   .burger__menu {
     display: flex;
   }
