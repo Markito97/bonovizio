@@ -1,17 +1,69 @@
 import { Navigation, Pagination } from "swiper";
 import anime from "animejs/lib/anime.es.js";
 import Swiper from "swiper/bundle";
-import "./src/scss/index.scss";
 import "swiper/scss";
 import "swiper/scss/navigation";
 import "swiper/scss/pagination";
 
-console.log(anime);
+document.addEventListener("DOMContentLoaded", (e) => {
+  console.log("aboba");
+  anime({
+    targets: ".promo__text-wrapper",
+    opacity: 1,
+    easing: "linear",
+    duration: 1500,
+  });
+});
 
 (function start() {
   const menu = document.querySelector(".nav");
   const burgerBtn = document.querySelector(".burger__menu");
   const messageForm = document.querySelector(".message__form");
+
+  const sliderContainer = document.querySelector(".swiper");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        let animatedElement = entry.target;
+        anime({
+          targets: animatedElement,
+          opacity: 1,
+          translateY: [100, 0],
+          easing: "linear",
+          duration: 1500,
+        });
+        observer.unobserve(animatedElement);
+      }
+    });
+  });
+
+  observer.observe(sliderContainer);
+
+  anime({
+    targets: ".logo",
+    opacity: [0, 1],
+    duration: 1000,
+    easing: "linear",
+  });
+
+  // anime({
+  //   targets: ".promo__title",
+  //   opacity: [0, 1],
+  //   scale: [0.5, 1],
+  //   // rotate: "1turn",
+  //   easing: "easeInQuad",
+  //   duration: 1500,
+  // });
+
+  anime({
+    targets: ".promo__title-wrapper",
+    translateX: "100%",
+    opacity: 1,
+    easing: "easeOutExpo",
+    // duration: 2000,
+    // delay: 1000,
+  });
 
   const sendForm = (e) => {
     e.preventDefault();

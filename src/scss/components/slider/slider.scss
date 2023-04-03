@@ -37,6 +37,7 @@
 }
 
 .swiper-container {
+  opacity: 0;
   max-width: 800px;
   height: 100%;
 
@@ -134,7 +135,8 @@
   .slider {
     &__container {
       max-width: none;
-      padding: 20px 20px;
+      padding-left: 20px;
+      padding-right: 20px;
     }
 
     .slider-wrapper {
