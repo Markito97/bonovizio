@@ -1,15 +1,15 @@
 .message {
   background-color: $bg-main;
 
-  &__title {
-    font-size: 60px;
-    line-height: 140%;
-  }
-
   &__container {
     max-width: 800px;
     display: flex;
     margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 60px;
+    line-height: 140%;
   }
 
   &__title {
@@ -27,6 +27,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 25px;
+    padding-bottom: 100px;
   }
 
   &__input-wrapper {
@@ -49,7 +50,62 @@
   }
 
   &__textarea {
+    outline: none;
     width: 100%;
+    font-size: 18px;
     resize: none;
+    padding-left: 20px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+  }
+
+  &__submit-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__submit {
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+    letter-spacing: 0.67em;
+    text-transform: uppercase;
+    padding: 25px;
+  }
+}
+
+@include tablet {
+  .message {
+    &__container {
+      max-width: 625px;
+    }
+  }
+}
+
+@include mobile {
+  .message {
+    &__container {
+      max-width: none;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    &__input-wrapper {
+      flex-direction: column;
+      row-gap: 25px;
+    }
+
+    &__form {
+      padding-top: 79px;
+    }
+
+    &__title {
+      padding-top: 72px;
+      font-size: 40px;
+    }
+
+    &__submit-wrapper {
+      justify-content: center;
+    }
   }
 }

@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    column-gap: 30px;
   }
 
   &__preview-wrapper {
@@ -79,6 +80,18 @@
   .promo {
     &__chat {
       max-width: 300px;
+    }
+
+    &__preview-wrapper {
+      padding-left: 0;
+    }
+
+    &__auth {
+      margin-left: 0;
+    }
+
+    &__text-wrapper {
+      margin-left: 0;
     }
   }
 }
@@ -168,6 +181,7 @@
 
     &__auth {
       margin-top: 59px;
+      margin-bottom: 0;
       margin-left: 0;
       width: 100%;
       letter-spacing: 0.3em;

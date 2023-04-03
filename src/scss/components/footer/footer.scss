@@ -1,0 +1,62 @@
+.contacts {
+  background-color: $cl-sec-main;
+
+  &__links-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 160px;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
+
+  &__link {
+    color: $cl-prim-main;
+  }
+
+  .email {
+    font-size: 41px;
+    line-height: 140%;
+  }
+
+  .phone {
+    font-size: 35px;
+    line-height: 140%;
+  }
+
+  .privacy {
+    font-size: 20px;
+    text-decoration: underline;
+  }
+}
+
+@include laptop {
+}
+@include tablet {
+}
+
+@include mobile {
+  .contacts {
+    background-color: $cl-sec-main;
+
+    &__links-wrapper {
+      padding-bottom: 112px;
+    }
+
+    .email {
+      font-size: 28px;
+    }
+
+    .phone {
+      font-size: 22px;
+    }
+
+    .privacy {
+      font-size: 14px;
+    }
+  }
+}

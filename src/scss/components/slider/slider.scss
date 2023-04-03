@@ -1,11 +1,32 @@
 .slider {
-  padding-top: 72px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  font-size: 60px;
-  line-height: 140%;
+  &__container {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    max-width: 800px;
+    position: relative;
+  }
+
+  .slider-wrapper {
+    padding: 72px 0 80px 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__buttons-wrapper {
+  }
+
+  .swiper-button-prev-unique {
+    position: absolute;
+    left: -85px;
+    top: 341px;
+  }
+
+  .swiper-button-next-unique {
+    position: absolute;
+    right: -85px;
+    top: 341px;
+  }
 }
 
 .slider__title {
@@ -15,11 +36,7 @@
   padding-bottom: 50px;
 }
 
-.slider-wrapper {
-  max-width: 800px;
-}
-
-.swiper {
+.swiper-container {
   max-width: 800px;
   height: 100%;
 
@@ -35,9 +52,7 @@
     .swiper-slide__item {
       width: 100%;
       height: 111px;
-      padding-left: 25px;
-      padding-top: 25px;
-      padding-bottom: 25px;
+      padding: 25px 0 25px 25px;
       position: absolute;
       display: flex;
       flex-direction: column;
@@ -65,13 +80,15 @@
   }
 }
 
+.swiper-button-prev {
+  position: absolute;
+}
+
 .swiper-custom-pagination {
+  padding-top: 49px;
   display: flex;
-  justify-content: center;
   column-gap: 30px;
-  text-align: center;
-  margin-top: 49px;
-  position: relative;
+  justify-content: center;
 }
 
 .swiper-button-next::after,
@@ -90,11 +107,51 @@
   background-color: #0a2756 !important;
 }
 
-// .swiper-pagination-bullet {
-//   background-color: rgb(6, 6, 6) !important;
-//   opacity: 100% !important;
-// }
+@include tablet {
+  .slider {
+    &__container {
+      max-width: 625px;
+    }
 
-// .swiper-pagination-bullet-active {
-//   background-color: #ffc107 !important;
-// }
+    .slider-wrapper {
+      padding: 27px 0 28px 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      display: none;
+    }
+
+    &__buttons-wrapper {
+      display: none;
+    }
+  }
+}
+
+@include mobile {
+  .slider {
+    &__container {
+      max-width: none;
+      padding: 20px 20px;
+    }
+
+    .slider-wrapper {
+      padding-top: 0;
+      padding-bottom: 42px;
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-custom-pagination {
+      column-gap: 0;
+    }
+
+    .slider__title {
+      font-size: 39px;
+      color: #0a2756;
+      padding-bottom: 30px;
+    }
+  }
+}

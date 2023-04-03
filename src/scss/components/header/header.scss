@@ -7,11 +7,13 @@
     column-gap: 25px;
 
     .logo {
+      cursor: pointer;
       font-size: 29px;
       line-height: 35px;
       color: $cl-sec-main;
       white-space: nowrap;
       font-weight: normal;
+      z-index: 1001;
     }
 
     .nav {
@@ -19,6 +21,7 @@
       display: flex;
 
       .navigation-menu {
+        overflow: hidden;
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -50,6 +53,13 @@
           align-items: center;
           column-gap: 20px;
         }
+
+        &__item {
+        }
+
+        &__link {
+          cursor: pointer;
+        }
       }
     }
   }
@@ -58,30 +68,46 @@
 .open {
   display: flex !important;
   position: fixed;
+  display: flex;
+  align-items: center;
   background-color: white;
   height: 100vh;
   left: 0;
   top: 0;
-  bottom: 0;
-  right: 0;
   transform: translateY(-150%);
   animation: show 1s forwards;
+  z-index: 1000;
+}
+
+@include laptop {
+  .header {
+    &__navigation-wrapper {
+      padding: 20px 0px 20px 0px;
+      column-gap: 10px;
+    }
+
+    &__divider {
+      display: none;
+    }
+
+    .nav {
+      .social-media__menu {
+        padding-left: 10px;
+        column-gap: 10px;
+      }
+    }
+  }
 }
 
 @include tablet {
   .header {
     &__navigation-wrapper {
-      padding: 20px 0px 20px 0px;
       display: flex;
       justify-content: space-between;
 
       .logo {
-        z-index: 1000;
+        z-index: 1001;
       }
-    }
-
-    &__divider {
-      display: none;
     }
 
     .nav {
