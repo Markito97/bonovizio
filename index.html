@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <title>Bonovizio</title>
-    <script type="module" crossorigin src="/bonovizio/assets/index-6db0f9cc.js"></script>
-    <link rel="stylesheet" href="/bonovizio/assets/index-5f256684.css">
+    <script type="module" crossorigin src="/bonovizio/assets/index-d72c6e89.js"></script>
+    <link rel="stylesheet" href="/bonovizio/assets/index-dbcdb901.css">
   </head>
   <body>
     <div id="wrapper">
@@ -218,11 +218,9 @@
                     </clipPath>
                   </defs>
                 </svg>
-
-                <!-- <img src="./src/assets/icons/Chat.svg" alt="Chat" /> -->
               </div>
             </div>
-            <div class="promo__text-wrapper">
+            <div class="promo__text-wrapper promo__text-wrapper_active">
               <h6 class="promo__title">
                 Команда рекламного холдинга GroupM рада открыть для вас двери digital-конференции
                 NextM!
@@ -233,8 +231,10 @@
                 представленной в России агентствами Mindshare, MediaCom и Wavemaker.
               </p>
             </div>
-            <div class="promo__info">
-              <img src="/bonovizio/assets/ChevronBottom-ed207ecc.svg" alt="ChevronBottom" />
+            <div class="promo__toggle-descripton">
+              <button class="promo__button-inner">
+                <img src="/bonovizio/assets/ChevronBottom-ed207ecc.svg" alt="ChevronBottom" />
+              </button>
             </div>
           </div>
         </section>
@@ -377,27 +377,28 @@
           </div>
         </section>
       </main>
-      <footer>
-        <div class="contacts">
-          <div class="container">
-            <div class="contacts__links-wrapper">
-              <ul class="contacts__menu">
-                <li class="contacts__item">
-                  <a href="#" class="contacts__link email"> info@groupmnextm.ru </a>
-                </li>
-                <li class="contacts__item">
-                  <a href="#" class="contacts__link phone"> + 7 (495) 641-40-80 </a>
-                </li>
-                <li class="contacts__item">
-                  <a href="#" class="contacts__link privacy"> Правовая информация </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+      <footer class="contacts">
+        <div class="container">
+          <ul class="list-contacts">
+            <li class="list-contacts__item">
+              <a href="#" class="list-contacts__link list-contacts__link_email">
+                info@groupmnextm.ru
+              </a>
+            </li>
+            <li class="list-contacts__item">
+              <a href="#" class="list-contacts__link list-contacts__link_phone">
+                + 7 (495) 641-40-80
+              </a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="list-contacts__link list-contacts__link_privacy">
+                Правовая информация
+              </a>
+            </li>
+          </ul>
         </div>
       </footer>
     </div>
-
     
   </body>
 </html>
