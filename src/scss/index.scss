@@ -39,18 +39,15 @@ body {
   appearance: none;
 }
 
-@media (max-width: 768px) {
+@include tablet {
   .container {
     max-width: none;
-    padding-left: 27px;
-    padding-right: 27px;
+    padding: 0 27px 0 27px;
   }
 }
 
-@media (max-width: 575px) {
+@include mobile {
   .container {
-    max-width: none;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 20px 0 20px;
   }
 }

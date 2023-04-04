@@ -56,9 +56,21 @@ export const sliderAnimation = () => {
 };
 
 export const paginationBulletsAnimation = () => {
-  anime({
-    targets: ".swiper-custom-pagination .swiper-pagination-bullet",
-    translateY: [1500, 0],
-    delay: anime.stagger(100, { start: 1500 }),
+  const paginationContainer = document.querySelector(".swiper-custom-pagination");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const animatedElement = entry.target;
+        anime({
+          targets: ".swiper-custom-pagination .swiper-pagination-bullet",
+          translateY: [1500, 0],
+          delay: anime.stagger(100, { start: 1000 }),
+        });
+        observer.unobserve(animatedElement);
+      }
+    });
   });
+
+  observer.observe(paginationContainer);
 };

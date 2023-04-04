@@ -11,7 +11,7 @@ export const form = () => {
     if (EMAIL_PATTERN.test(email.value)) {
       email.style.outline = "none";
     } else {
-      email.style.outline = "2px solid red";
+      email.style.outline = "3px solid rgba(251, 85, 85, 1)";
     }
   };
 
@@ -23,21 +23,21 @@ export const form = () => {
     const data = {};
 
     if (!name.value) {
-      name.style.outline = "2px solid red";
+      name.style.outline = "3px solid rgba(251, 85, 85, 1)";
     } else {
       name.style.outline = "none";
       data.name = name.value;
     }
 
     if (!email.value) {
-      email.style.outline = "2px solid red";
+      email.style.outline = "3px solid rgba(251, 85, 85, 1)";
     } else {
       email.style.outline = "none";
       data.email = email.value;
     }
 
     if (!message__text.value) {
-      message__text.style.outline = "2px solid red";
+      message__text.style.outline = "3px solid rgba(251, 85, 85, 1)";
     } else {
       message__text.style.outline = "none";
       data.message = message__text.value;

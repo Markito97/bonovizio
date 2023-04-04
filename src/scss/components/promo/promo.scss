@@ -69,11 +69,17 @@
     line-height: 140%;
   }
 
-  &__info {
+  &__toggle-descripton {
     padding-top: 48px;
     padding-bottom: 86px;
     display: flex;
     justify-content: center;
+  }
+
+  &__button-inner {
+    cursor: pointer;
+    border: none;
+    background-color: $bg-main;
   }
 }
 
@@ -198,7 +204,7 @@
       padding-bottom: 130px;
     }
 
-    &__info {
+    &__toggle-descripton {
       display: none;
     }
   }
